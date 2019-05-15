@@ -15,33 +15,70 @@
 // console.log(myRoll(20));
 //_______^^_master random number generators^^^
 
+
+
+let dieSideFour = {
+	type: "Four-sided Die",
+	sides: 4
+	roll: roll1(){
+		console.log(roll1(this.sides))
+   		
+	}
+}
+
+function roll1(n){
+	let randomNumber1 = Math.floor(Math.random() * this.sides) +1;
+   		return randomNumber1;
+}
+// console.log(dieSideFour.sides)
+
 let dieSideSix = {
 	type: "Six-sided Die",
 	sides:6
+	// roll: function roll2(numberOfSides){
+ //   		let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
+ //   		return randomNumber1;
+	// }
 }
 // console.log(dieSideSix.sides)
 
 let dieSideEight = {
 	type: "Eight-sided Die",
 	sides:8
+	// roll: function roll3(numberOfSides){
+ //   		let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
+ //   		return randomNumber1;
+	// }
 }
 // console.log(dieSideEight.sides)
 
 let dieSideTen = {
 	type: "Ten-sided Die",
 	sides:10
+	// roll: function roll4(numberOfSides){
+ //   		let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
+ //   		return randomNumber1;
+	// }
 }
 // console.log(dieSideTen.sides)
 
 let dieSideTwelve = {
 	type: "Twelve-sided Die",
 	sides:12
+	// roll: function roll5(numberOfSides){
+ //   		let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
+ //   		return randomNumber1;
+	// }
 }
 // console.log(dieSideTwelve.sides)
 
 let dieSideTwenty = {
 	type: "Twenty-sided Die",
 	sides:20
+	// roll: function roll6(numberOfSides){
+ //   		let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
+ //   		return randomNumber1;
+	// }
 }
 // console.log(dieSideTwenty.sides)
 
@@ -228,13 +265,21 @@ let dieSideTwenty = {
 
 //_____________________________
 
+// let button = document.getElementsById('button');
+
+// button.onclick = roll1()
+	
+
+
+
 let heldDice = [0];
 rollDice1();
-rollDice2();
-rollDice3();
+// rollDice2();
+// rollDice3();
 // rollDice4();
 // rollDice5();
 // rollDice6();
+
 
 function roll1(numberOfSides){
    let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
@@ -262,56 +307,56 @@ function rollDice1(){
    }
 }
 
-function roll2(numberOfSides){
-   let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
-   return randomNumber1;
-}
+// function roll2(numberOfSides){
+//    let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
+//    return randomNumber1;
+// }
 
-function rollDice2(){
-   let diceResult = roll2(6);
-   if(diceResult == 2 || diceResult == 5 || diceResult == 10)
-   {
-       DieFinished2();
-   }
-   else if (true) {
-    (diceResult !=2 || diceResult != 5 || diceResult != 10);
+// function rollDice2(){
+//    let diceResult = roll2(6);
+//    if(diceResult == 2 || diceResult == 5 || diceResult == 10)
+//    {
+//        DieFinished2();
+//    }
+//    else if (true) {
+//     (diceResult !=2 || diceResult != 5 || diceResult != 10);
 
-    heldDice.push(diceResult);
-    KeepRolling();
-    // calcScore();
-    rollDice2();
-   }
-   else{
-       heldDice.push(diceResult);
-       calcScore();
-       rollDice2();
-   }
-}
-function roll3(numberOfSides){
-   let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
-   return randomNumber1;
-}
+//     heldDice.push(diceResult);
+//     KeepRolling();
+//     // calcScore();
+//     rollDice2();
+//    }
+//    else{
+//        heldDice.push(diceResult);
+//        calcScore();
+//        rollDice2();
+//    }
+// }
+// function roll3(numberOfSides){
+//    let randomNumber1 = Math.floor(Math.random() * numberOfSides) +1;
+//    return randomNumber1;
+// }
 
-function rollDice3(){
-   let diceResult = roll3(8);
-   if(diceResult == 2 || diceResult == 5 || diceResult == 10)
-   {
-       GameOver();
-   }
-   else if (true) {
-    (diceResult !=2 || diceResult != 5 || diceResult != 10);
+// function rollDice3(){
+//    let diceResult = roll3(8);
+//    if(diceResult == 2 || diceResult == 5 || diceResult == 10)
+//    {
+//        GameOver();
+//    }
+//    else if (true) {
+//     (diceResult !=2 || diceResult != 5 || diceResult != 10);
 
-    heldDice.push(diceResult);
-    KeepRolling();
-    // calcScore();
-    rollDice3();
-   }
-   else{
-       heldDice.push(diceResult);
-       calcScore();
-       rollDice3();
-   }
-}
+//     heldDice.push(diceResult);
+//     KeepRolling();
+//     // calcScore();
+//     rollDice3();
+//    }
+//    else{
+//        heldDice.push(diceResult);
+//        calcScore();
+//        rollDice3();
+//    }
+// }
 
 function WinGame(){
    calcScore();
@@ -323,21 +368,23 @@ function GameOver(){
 }
 function KeepRolling(){
   calcScore();
+  confirm("click to roll again")
 
   console.log("Keep Rolling!")
 }
 function DieFinished1(){
   calcScore();
   console.log("First die is out!")
+  confirm("click to roll second dice")
 }
-function DieFinished2(){
-  calcScore();
-  console.log("Second die is out!")
-}
-function DieFinished3(){
-  calcScore();
-  console.log("Third die is out!")
-}
+// function DieFinished2(){
+//   calcScore();
+//   console.log("Second die is out!")
+// }
+// function DieFinished3(){
+//   calcScore();
+//   console.log("Third die is out!")
+// }
 
 function calcScore(){
    let totalDice = heldDice.reduce(function(total, el){
